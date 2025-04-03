@@ -1,0 +1,89 @@
+### Register a New User
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "Augustine",
+  "email": "augustine@example.com",
+  "password": "augustine023",
+  "location": {
+    "type": "Point",
+    "coordinates": [40.7128, -74.0060]
+  },
+  "preferences": ["music", "sports"]
+}
+
+###
+
+### Login a User
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "augustine@example.com",
+  "password": "augustine023"
+}
+
+###
+
+### Get All Users
+GET http://localhost:5000/api/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE3NDM2YmZlLWZmNGItNGFhZC04YjU1LWYyNTAxZjc1MzM5NiIsImlhdCI6MTc0MzcxMTYxOCwiZXhwIjoxNzQzNzE1MjE4fQ.0vrOWJWyBv0uw_bFH4sywC8aIp-Z7B3Z7SEkYIqoZpA
+
+
+### Get a Single User by ID
+GET http://localhost:5000/api/users/470c63dc-414c-43a0-8a07-566b7d7d439f
+Authorization: Bearer <jwt_token>
+
+
+### Update a User
+PUT http://localhost:5000/api/users/470c63dc-414c-43a0-8a07-566b7d7d439f
+Content-Type: application/json
+Authorization: Bearer <jwt_token>
+
+{
+  "name": "deborah Updated",
+  "preferences": ["movies", "travel"]
+}
+
+
+### Delete a User
+DELETE http://localhost:5000/api/users/470c63dc-414c-43a0-8a07-566b7d7d439f
+Authorization: Bearer <jwt_token>
+
+
+
+### Create a new event
+POST http://localhost:5000/api/events
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE3NDM2YmZlLWZmNGItNGFhZC04YjU1LWYyNTAxZjc1MzM5NiIsImlhdCI6MTc0MzcxMTYxOCwiZXhwIjoxNzQzNzE1MjE4fQ.0vrOWJWyBv0uw_bFH4sywC8aIp-Z7B3Z7SEkYIqoZpA
+
+
+
+### Get All events
+GET http://localhost:5000/api/events
+Authorization: Bearer 
+
+###
+
+### Get a Single event by ID
+GET http://localhost:5000/api/events/
+Authorization: Bearer <jwt_token>
+
+###
+
+### Update an event
+PUT http://localhost:5000/api/events/id
+Content-Type: application/json
+Authorization: Bearer <jwt_token>
+
+{
+  "message": "Updated notification message",
+  "isRead": true
+}
+
+###
+
+### Delete an event
+DELETE http://localhost:5000/api/events/id
+Authorization: Bearer <jwt_token>

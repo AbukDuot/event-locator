@@ -1,0 +1,13 @@
+const logger = createLogger({
+  level: 'info',
+  format: combine(
+    timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
+    colorize(),
+    logFormat
+  ),
+  transports: [
+    new transports.Console(), // Logs to the console
+    new transports.File({ filename: 'logs/combined.log' }), // Logs all levels to combined.log
+    new transports.File({ filename: 'logs/error.log', level: 'error' }), // Logs only errors to error.log
+  ],
+});

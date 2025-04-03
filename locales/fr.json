@@ -1,0 +1,10 @@
+{
+    "welcome_message": "Bienvenue sur le Localisateur d'Événements",
+    "event_description": "Description",
+    "event_location": "Lieu",
+    "event_date": "Date",
+    "login": "Se connecter",
+    "register": "S'inscrire",
+    "logout": "Se déconnecter",
+    "reviews": "Avis"
+  }  

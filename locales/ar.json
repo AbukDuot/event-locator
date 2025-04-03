@@ -1,0 +1,10 @@
+{
+    "welcome_message": "مرحبًا بكم في تحديد موقع الحدث",
+    "event_description": "الوصف",
+    "event_location": "الموقع",
+    "event_date": "التاريخ",
+    "login": "تسجيل الدخول",
+    "register": "تسجيل",
+    "logout": "تسجيل الخروج",
+    "reviews": "المراجعات"
+  }

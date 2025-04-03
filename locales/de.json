@@ -1,0 +1,10 @@
+{
+    "welcome_message": "Willkommen beim Event Locator",
+    "event_description": "Beschreibung",
+    "event_location": "Standort",
+    "event_date": "Datum",
+    "login": "Anmelden",
+    "register": "Registrieren",
+    "logout": "Abmelden",
+    "reviews": "Bewertungen"
+  }  

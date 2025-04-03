@@ -1,0 +1,35 @@
+const { createLogger, format, transports } = require('winston');
+const { combine, timestamp, printf, colorize } = format;
+
+// Define the log format
+const logFormat = printf(({ level, message, timestamp }) => {
+  return `${timestamp} [${level}]: ${message}`;
+});
+
+// Ensure the logs directory exists
+const fs = require('fs');
+const path = require('path');
+const logDir = path.join(__dirname, '../logs');
+if (!fs.existsSync(logDir)) {
+  fs.mkdirSync(logDir);
+}
+
+// Create the logger
+const logger = createLogger({
+  level: 'info', // Default log level
+  format: combine(
+    timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
+    colorize(), // Add colors to log levels
+    logFormat
+  ),
+  transports: [
+    // Console transport for development
+    new transports.Console(),
+    // File transport for error logs
+    new transports.File({ filename: 'logs/error.log', level: 'error' }),
+    // File transport for all logs
+    new transports.File({ filename: 'logs/combined.log' }),
+  ],
+});
+
+module.exports = logger;
