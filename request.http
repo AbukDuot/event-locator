@@ -28,16 +28,16 @@ Content-Type: application/json
 
 ### Get All Users
 GET http://localhost:5000/api/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE3NDM2YmZlLWZmNGItNGFhZC04YjU1LWYyNTAxZjc1MzM5NiIsImlhdCI6MTc0MzcxMTYxOCwiZXhwIjoxNzQzNzE1MjE4fQ.0vrOWJWyBv0uw_bFH4sywC8aIp-Z7B3Z7SEkYIqoZpA
+Authorization: Bearer <jwt_token>
 
 
 ### Get a Single User by ID
-GET http://localhost:5000/api/users/470c63dc-414c-43a0-8a07-566b7d7d439f
+GET http://localhost:5000/api/users/Id
 Authorization: Bearer <jwt_token>
 
 
 ### Update a User
-PUT http://localhost:5000/api/users/470c63dc-414c-43a0-8a07-566b7d7d439f
+PUT http://localhost:5000/api/users/Id
 Content-Type: application/json
 Authorization: Bearer <jwt_token>
 
@@ -48,7 +48,7 @@ Authorization: Bearer <jwt_token>
 
 
 ### Delete a User
-DELETE http://localhost:5000/api/users/470c63dc-414c-43a0-8a07-566b7d7d439f
+DELETE http://localhost:5000/api/users/Id
 Authorization: Bearer <jwt_token>
 
 
@@ -56,9 +56,16 @@ Authorization: Bearer <jwt_token>
 ### Create a new event
 POST http://localhost:5000/api/events
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE3NDM2YmZlLWZmNGItNGFhZC04YjU1LWYyNTAxZjc1MzM5NiIsImlhdCI6MTc0MzcxMTYxOCwiZXhwIjoxNzQzNzE1MjE4fQ.0vrOWJWyBv0uw_bFH4sywC8aIp-Z7B3Z7SEkYIqoZpA
+Authorization: Bearer <jwt_token>
 
-
+{
+  "name": "Tech Conference",
+  "description": "A conference on AI & ML",
+  "latitude": 12.9716,
+  "longitude": 77.5946,
+  "date": "2025-05-10T10:00:00Z",
+  "categories": "Technology"
+}
 
 ### Get All events
 GET http://localhost:5000/api/events
@@ -86,4 +93,45 @@ Authorization: Bearer <jwt_token>
 
 ### Delete an event
 DELETE http://localhost:5000/api/events/id
+Authorization: Bearer <jwt_token>
+
+
+### Create a new notification
+POST http://localhost:5000/api/notifications
+Content-Type: application/json
+Authorization: Bearer <jwt_token>
+
+{
+  "message": "This is a notification message",
+  "eventId": 123
+}
+
+###
+
+### Get All notifications
+GET http://localhost:5000/api/notifications
+Authorization: Bearer <jwt_token>
+
+###
+
+### Get a Single notification by ID
+GET http://localhost:5000/api/notifications/Id
+Authorization: Bearer <jwt_token>
+
+###
+
+### Update a notification
+PUT http://localhost:5000/api/notifications/Id
+Content-Type: application/json
+Authorization: Bearer <jwt_token>
+
+{
+  "message": "Updated notification message",
+  "isRead": true
+}
+
+###
+
+### Delete a notification
+DELETE http://localhost:5000/api/notifications/Id
 Authorization: Bearer <jwt_token>
